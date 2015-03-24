@@ -17,9 +17,9 @@ function app(){
         {url: "./bower_components/lodash/lodash.min.js"},
 
         // when using just Backbone, use this line
-        {url: "./bower_components/backbone/backbone.js"},
+        // {url: "./bower_components/backbone/backbone.js"},
         // when using Parse, comment out the above line and uncomment the line below
-        // {url: "./bower_components/parse-js-sdk/lib/parse.min.js"},
+        {url: "./bower_components/parse-js-sdk/lib/parse.min.js"},
 
         // when using React (and the plugin JSnoX), uncomment the following two lines
         // {url: "./bower_components/react/react.min.js"},
@@ -27,7 +27,12 @@ function app(){
 
         // other stuff
         {url: "./bower_components/pace/pace.min.js"},
-        {url: "./js/TemplateView.js"}
+        {url: "./js/TemplateView.js"},
+        {url: "./js/Router.js"} ,
+        {url: "./js/Model.js"} ,
+        {url: "./js/Homeview.js"},
+        {url: "./js/UserView.js"},
+        {url: "./js/Detailsview.js"}
     ).then(function(){
         // if turning on JSnoX, uncommment the following line
         // window.d = jsnox(React);
@@ -36,6 +41,9 @@ function app(){
 
         document.querySelector("html").style.opacity = 1;
         // start app?
+
+        Parse.initialize('2uSgfQ88loZfXQoWuzztazNQvMHAqHRq6wl2ixRo','K5wX0qbZWuSf0WE4PjJWKyQtRuozD4pXOTsMDdSC');
+        new Parse.MovieRouter({ token: '7trjhvhmtd3cwu6dnrth5axs' })
     })
 
 }

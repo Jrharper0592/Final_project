@@ -37,9 +37,9 @@
     }
 }
 
-@include gridify(2, 400);
-@include gridify(4, 600);
-
+@include gridify(2, 500);
+@include gridify(3, 800);
+@include gridify(4, 1000);
 /**
  * PACE (automatic pre-loader thingy)
  */
@@ -75,6 +75,245 @@
 
 img {max-width:100%;}
 
+html    {
+    
+    height:100%;
+}
+
 body {
     transition: opacity .25s ease;
+    // border: 1px solid blue;    
+    background-color:black;
+    color: white;
 }
+
+
+.curtains {
+    position:absolute;
+    height:auto;
+    width:100%;
+    z-index:-1;
+}   
+
+    
+
+.container {
+    // max-width: 100%;
+    // background-color: #efefef;
+    padding: 1em;
+    // height:100%;
+
+        .homeicon {
+            width:125px;
+            height:125px;
+            float:left;
+            margin-top:0px;
+            margin-left:0px;
+
+        }
+        .loginicon {
+            width:100px;
+            height:100px;
+            float:right;
+            margin-top:10px;
+            margin-right:10px;
+        }
+        .mainheader {
+            color:white;
+            text-align:center; 
+            padding:0.5em; 
+            // background-color:red;  
+        }     
+        
+        
+        .sidebar {
+                display:inline-block;
+                // border:1px solid red;
+                width:30%;
+                // height:100%;
+                vertical-align: top;
+            .backer {
+                margin-top:2%;
+                width:81%;
+                background: rgba(55,55,55,.75);
+                border:1px solid black;
+                transition: background .5s;
+                text-align: center;
+                .styling {
+                    list-style:none;
+                    padding-left:0;
+                    a {
+                        color:white;
+                    }
+                }
+            }
+
+            }
+        .HowTo {
+                position:relative;
+                text-align:center;
+                width:65%;
+                display:inline-block;
+                // height:100%;
+                vertical-align: top;
+            .listed {
+                padding:2%;
+                background: rgba(55,55,55,.75);
+                border:1px solid black;
+                transition: background .5s;
+                height: 200px;
+                text-align: center;
+
+                a{
+                    color:white;
+                }
+
+                &:hover {
+                    background: rgba(134,48,89,.5);
+                }
+                img {
+                    margin-right:auto;
+                    margin-left:auto;
+                    position:relative;
+                    height: 70%;
+                    width:50%;
+                    display:block;
+
+                }
+            }
+        }
+        .Searchbar {
+            width:80%;
+        }
+        .GO {
+            width:40%;
+            margin-left:20%;
+            border-radius:50%;
+            border:2px solid black;
+            &:hover {
+                background-color:aquamarine;
+            }
+        }
+        .imageholder {
+            text-align:center;
+        }
+        .MovieImage {
+            max-height: 500px; 
+        }
+        .title {
+            margin-top: 1%;
+            text-align:center;
+            font-size: 50px;
+        }
+        .DetailedInfo {
+            margin:2%;
+        }
+        .login {
+            width:40%;
+        }
+        .register {
+            width:40%;
+        }
+        h5 {
+            color:white;
+        }
+        
+        form {
+            width:100%;
+            input {
+                width:100%;
+                height: 100%;
+                display: inline-block;
+                color: black;
+            }
+          // div{
+          //   width: 100%;
+          //   height: 25%;
+          // }
+          
+          
+          // .editor{
+          //   transition: all 2s ease;
+          //   // border:1px solid blue;
+          //   // background-color:white;
+          //   opacity:1;
+          //   display:inline-block;
+          //   z-index: 1;
+          // }
+         
+          /*** For later ***/
+
+          // .hidden{
+          //   // display:inline;
+          //   position:absolute;
+          //   opacity:0;
+          //   z-index: -1;
+          // }
+          div.button-holder{
+            width: 30%;
+            display: inline-block; 
+            padding:0px;
+            button{
+                border: 2px solid black;
+                width: 100%;
+                height:30px;
+                margin:0px;
+                padding:0px;
+                margin-right:3%;
+                border-radius: 10px;
+                // border: 0px;
+                text-align: center;
+                
+                &:hover {
+                cursor: pointer;
+                background-color: aquamarine;
+                }
+            } 
+          } 
+          div.input-holder {
+            width: 88%;
+            display: inline-block;
+            
+          }
+
+            
+        }
+    }
+            
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

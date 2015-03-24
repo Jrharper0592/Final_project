@@ -1,0 +1,10 @@
+<div>
+	<ul class="grid grid-2-500 grid-3-800 grid-4-1000 Movies">
+        <% data.movies.forEach(function(movie){ %>
+            <a class='listed' href="#info/<%= movie.id %>">
+                <%= movie.title.length>20 ? movie.title.substr(0,17)+'...': movie.title %>
+                <img src="<%=movie.posters.thumbnail%>">
+            </a>
+        <% }) %>
+    </ul>
+</div>
