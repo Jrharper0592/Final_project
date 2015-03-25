@@ -30,7 +30,11 @@
         },
 
         routes: {
-        	'top-movies':"loadTopMovies",
+        	'upcoming-movies':'loadUpcomingMovies',
+        	'opening-movies':'loadOpeningMovies',
+        	'in-theaters':'loadTheaters',
+        	'box-office':'loadBoxOffice',
+        	'top-movie-rentals':"loadTopMovies",
             'login': 'login',
             'info/:id': 'details',
             'search/:keywords': 'search',
@@ -48,25 +52,72 @@
         details: function(id) {
             // this.detailview.model = ...
 
-            var movieModel = this.collection.get(id)
-            this.detailview.model= movieModel
-            this.detailview.render();
+            // var movieModel = this.collection.get(id)
+            var movieModel = new Parse.Movie({id: id})
+            var self = this
+            movieModel.fetchDataFromRottenTomatoes().then(function(){
+            	self.detailview.model= movieModel
+	            self.detailview.render();	
+            })
+            
             // self.drawDetails(id);
             // console.log(id);
         },
 
         loadTopMovies:function(){
         	var self = this;
-        	this.collection = new Parse.TopMoviesCollection()
-
-        	this.collection.fetchMovies(/*?keywords?*/).then(function(topMoviesResponse){
+        	this.collection = new Parse.MovieCollection();
+        	console.log(this.collection)
+        	this.collection.fetchTopMovies(/*?keywords?*/).then(function(data){
+       
         		self.homeView.collection = self.collection
         		self.homeView.render();
         	})
+        },
 
-
+        loadBoxOffice:function(){
+        	var self = this;
+        	this.collection = new Parse.MovieCollection();
+        	console.log(this.collection)
+        	this.collection.fetchBoxOfficeMovies(/*?keywords?*/).then(function(data){
+       
+        		self.homeView.collection = self.collection
+        		self.homeView.render();
+        	})
         },
         
+        loadTheaters:function(){
+        	var self = this;
+        	this.collection = new Parse.MovieCollection();
+        	console.log(this.collection)
+        	this.collection.fetchInTheatersMovies(/*?keywords?*/).then(function(data){
+       
+        		self.homeView.collection = self.collection
+        		self.homeView.render();
+        	})
+        },
+
+        loadOpeningMovies:function(){
+        	var self = this;
+        	this.collection = new Parse.MovieCollection();
+        	console.log(this.collection)
+        	this.collection.fetchOpeningMovies(/*?keywords?*/).then(function(data){
+       
+        		self.homeView.collection = self.collection
+        		self.homeView.render();
+        	})
+        },
+
+        loadUpcomingMovies:function(){
+        	var self = this;
+        	this.collection = new Parse.MovieCollection();
+        	console.log(this.collection)
+        	this.collection.fetchUpcomingMovies(/*?keywords?*/).then(function(data){
+       
+        		self.homeView.collection = self.collection
+        		self.homeView.render();
+        	})
+        },
 
         search: function(keywords) {
         	var self = this;
