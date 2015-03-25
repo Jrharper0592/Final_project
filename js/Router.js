@@ -22,13 +22,15 @@
             // profile view
             this.userView = new Parse.UserView({});
             // details / info view
-            this.detailview = new Parse.Detailsview({});
+            this.detailview = new Parse.Detailsview({
+            });
 
             //  start the router
             Parse.history.start();
         },
 
         routes: {
+        	'top-movies':"loadTopMovies",
             'login': 'login',
             'info/:id': 'details',
             'search/:keywords': 'search',
@@ -45,10 +47,26 @@
 
         details: function(id) {
             // this.detailview.model = ...
+
+            var movieModel = this.collection.get(id)
+            this.detailview.model= movieModel
             this.detailview.render();
             // self.drawDetails(id);
             // console.log(id);
         },
+
+        loadTopMovies:function(){
+        	var self = this;
+        	this.collection = new Parse.TopMoviesCollection()
+
+        	this.collection.fetchMovies(/*?keywords?*/).then(function(topMoviesResponse){
+        		self.homeView.collection = self.collection
+        		self.homeView.render();
+        	})
+
+
+        },
+        
 
         search: function(keywords) {
         	var self = this;
@@ -57,7 +75,7 @@
         	})
         }
     });
-
+	
 
     var stuff = {
         URLs: {

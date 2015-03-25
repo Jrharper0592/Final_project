@@ -34,7 +34,7 @@
 <div class='HowTo'>
     <ul class="grid grid-2-500 grid-3-800 grid-4-1000 Movies">
         <% data && data.forEach(function(movie){ %>
-            <a class='listed' href="#info/<%= movie.id %>">
+            <a class='listed' href="#info/<%= movie.id %>" data-movieId="<%=movie.id%>">
                 <%= movie.get('title').length > 20 ? movie.get('title').substr(0,17)+'...': movie.get('title') %>
                 <img src="<%= movie.get('posters').thumbnail %>">
             </a>

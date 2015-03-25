@@ -198,15 +198,44 @@ body {
             text-align:center;
         }
         .MovieImage {
-            max-height: 500px; 
+            height:400px;
+            width:300px;
         }
         .title {
             margin-top: 1%;
             text-align:center;
             font-size: 50px;
         }
+        .between {
+            display:inline;
+            .rating {
+                display: inline-block;
+                float:left;
+                padding-left:2%;
+            }
+            .year {
+                display: inline-block;
+                float:right;
+                padding-right:2%;
+            }
+        }
+        .below {
+            display:inline;
+            margin-bottom:10%;
+            .UserRating {
+                display: inline-block;
+                float:left;
+                padding-left:2%;
+            }
+            .Critics {
+                display: inline-block;
+                float:right;
+                padding-right:2%;
+            }
+        }
         .DetailedInfo {
             margin:2%;
+            display:inline-block;
         }
         .login {
             width:40%;

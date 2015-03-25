@@ -32,7 +32,7 @@ function app(){
         {url: "./js/Model.js"} ,
         {url: "./js/Homeview.js"},
         {url: "./js/UserView.js"},
-        {url: "./js/Detailsview.js"}
+        {url: "./js/detailsview.js"}
     ).then(function(){
         // if turning on JSnoX, uncommment the following line
         // window.d = jsnox(React);

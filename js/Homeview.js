@@ -9,7 +9,7 @@
         events: {
             'click .homeicon': 'home',
             'click .loginicon': 'Logging',
-            'submit .SC': 'handleEvents'
+            'submit .SC': 'handleEvents',
         },
         home: function(e) {
             e.preventDefault();
@@ -21,12 +21,15 @@
             window.location.hash = "login"
         },
 
-        handleEvents: function() {
-            $('body').on("submit", "form", function(event) {
-                event.preventDefault();
-                window.location.hash = 'search/' + this.querySelector('input').value;
-            });
-        },
+        handleEvents: function(event) {
+            event.preventDefault();
+            window.location.hash = 'search/' + document.querySelector('input').value;
+        }
+
+
+
+
+
 
     })
 
