@@ -46,7 +46,14 @@
         },
 
         home: function() {
-            this.homeView.render();
+            var self = this;
+            this.collection = new Parse.MovieCollection();
+            console.log(this.collection)
+            this.collection.fetchInTheatersMovies(/*?keywords?*/).then(function(data){
+       
+                self.homeView.collection = self.collection
+                self.homeView.render();
+            })
         },
 
         details: function(id) {
