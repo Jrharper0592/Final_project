@@ -1,8 +1,9 @@
-;(function(exports){
+;
+(function(exports) {
 
     "use strict";
 
-    exports.TemplateView = function createTemplateView(backboneOrParse, _, $){
+    exports.TemplateView = function createTemplateView(backboneOrParse, _, $) {
         return backboneOrParse.View.extend({
             cache: {},
             stream: function(url) {
@@ -29,7 +30,7 @@
             render: function() {
                 var self = this;
                 this.loadTemplate(this.options.view || this.view).then(function(fn) {
-                    
+
                     var d = self.model || self.collection;
                     self.el.innerHTML = fn({
                         data: d,
@@ -40,7 +41,7 @@
         })
     }
 
-    if(typeof module !== "object"){
+    if (typeof module !== "object") {
         (window.Parse || window.Backbone)["TemplateView"] = TemplateView(window.Parse || window.Backbone, _, $)
     }
 
