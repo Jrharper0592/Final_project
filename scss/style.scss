@@ -224,6 +224,7 @@ body {
                 color: white;
                 a {
                     color: white;
+                    text-decoration: none;
                 }
             }
         }
@@ -236,6 +237,7 @@ body {
         // height:100%;
         vertical-align: top;
         .listed {
+            text-decoration: none;
             padding: 2%;
             background: rgba(55, 55, 55, .75);
             border: 1px solid black;
